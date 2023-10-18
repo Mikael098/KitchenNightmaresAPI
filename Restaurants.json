@@ -1,0 +1,299 @@
+
+{
+    "_id":{"$oid":"633b1ba17bc10fbb3a250f13"},
+    "nom":"Le resto de Bobby",
+    "description":"Venez chex Bobby,manger des bonnes patates aux poivres",
+    "emplacement":"89 rue Saint-Pierre, Boston",
+    "commentaire_de_Gordon":"Je ne donnerai même pas les patates à des rats, tellement ils sont horrible !",
+    "note_de_Gordon":1,
+    "note_public":1,
+    "nombre_insultes":88,
+    "date_de_visite":{
+        "$date":"2015-12-26T00:00:00Z"
+    },
+    "emission_censurer":false,
+    "cuisinier":[
+        "Jean-Claude Vantale",
+        "Yve-Charge Plus",
+        "King-Jang Hung"
+    ],
+    "commentaire_public":[
+        {
+         "commentaire":"J'mai étoufai vec patat",
+         "note":0
+        },
+        {
+         "commentaire":"Ce n'est pas une place adpater par des enfants, mes enfants ce sont perdus dans les champs de patates, nous avons due appeler la police !",
+         "note":2
+        }
+    ]
+}
+
+{
+    "_id":{"$oid":"633b1ba17bc10fbb3a250f14"},
+    "nom":"La cuisine de Marie",
+    "description":"Venez chez Marie pour déguster ses délicieuses pâtes à la sauce tomate",
+    "emplacement":"55 avenue de la République, Paris",
+    "commentaire_de_Gordon":"Les pâtes étaient tellement insipides que je les ai utilisées comme colles pour réparer ma chaise bancale !",
+    "note_de_Gordon":2,
+    "note_public":1,
+    "nombre_insultes":72,
+    "date_de_visite":{
+        "$date":"2018-07-15T00:00:00Z"
+    },
+    "emission_censurer":false,
+    "cuisinier":[
+        "Marie Dupont",
+        "Pierre Leclerc",
+        "Lucie Martin"
+    ],
+    "commentaire_public":[
+        {
+         "commentaire":"Les pâtes étaient immangeables, une expérience désastreuse !",
+         "note":1
+        },
+        {
+         "commentaire":"Service lent et désorganisé, je ne reviendrai jamais !",
+         "note":2
+        }
+    ]
+}
+
+{
+    "_id":{"$oid":"633b1ba17bc10fbb3a250f15"},
+    "nom":"Le Grill de Tony",
+    "description":"Venez chez Tony pour savourer ses succulentes côtes de porc grillées",
+    "emplacement":"123 Main Street, New York",
+    "commentaire_de_Gordon":"Les côtes de porc étaient si dures que même un marteau-piqueur aurait du mal à les couper !",
+    "note_de_Gordon":1,
+    "note_public":2,
+    "nombre_insultes":68,
+    "date_de_visite":{
+        "$date":"2019-05-20T00:00:00Z"
+    },
+    "emission_censurer":false,
+    "cuisinier":[
+        "Tony Sanchez",
+        "Maria Rodriguez",
+        "Carlos Martinez"
+    ],
+    "commentaire_public":[
+        {
+         "commentaire":"Les côtes de porc étaient pas cuite !",
+         "note":1
+        },
+        {
+         "commentaire":"Le serveur m'a menacé pour avoir un tips !",
+         "note":2
+        }
+    ]
+}
+
+{
+    "_id":{"$oid":"633b1ba17bc10fbb3a250f16"},
+    "nom":"Le Bistrot d'Isabelle",
+    "description":"Venez chez Isabelle pour déguster sa fameuse soupe à l'oignon",
+    "emplacement":"42 Rue de la Paix, Lyon",
+    "commentaire_de_Gordon":"La soupe à l'oignon était si fade que même un pichet d'eau aurait plus de saveur !",
+    "note_de_Gordon":1,
+    "note_public":4,
+    "nombre_insultes":64,
+    "date_de_visite":{
+        "$date":"2020-11-10T00:00:00Z"
+    },
+    "emission_censurer":false,
+    "cuisinier":[
+        "Isabelle Dupuis",
+        "Pierre Leblanc",
+        "Sophie Durand"
+    ],
+    "commentaire_public":[
+        {
+         "commentaire":"La soupe à l'oignon était décevante, je m'attendais à mieux !",
+         "note":1
+        },
+        {
+         "commentaire":"Le personnel était impoli et inattentif, je ne reviendrai pas !",
+         "note":2
+        }
+    ]
+}
+
+{
+    "_id": {"$oid": "633b1ba17bc10fbb3a250f17"},
+    "nom": "Chez Luigi",
+    "description": "Venez chez Luigi pour déguster ses pizzas authentiques",
+    "emplacement": "17 Via Roma, Rome",
+    "commentaire_de_Gordon": "Ces pizzas étaient si insipides que même un carton aurait plus de goût !",
+    "note_de_Gordon": 1,
+    "note_public": 1,
+    "nombre_insultes": 75,
+    "date_de_visite": {
+        "$date": "2017-09-03T00:00:00Z"
+    },
+    "emission_censurer": true,
+    "cuisinier": [
+        "Luigi Rossi",
+        "Antonio Marino",
+        "Maria Ricci"
+    ],
+    "commentaire_public": [
+        {
+            "commentaire": "On m'a servi une pizza sans sance, sans fromage et sans peperonni",
+            "note": 1
+        },
+        {
+            "commentaire": "La pizza que j'ai commandé était complètement brûlée",
+            "note": 2
+        }
+    ]
+}
+
+{
+    "_id": {"$oid": "633b1ba17bc10fbb3a250f18"},
+    "nom": "Le Café de Sophie",
+    "description": "Venez chez Sophie pour déguster son café et ses pâtisseries faites maison",
+    "emplacement": "30 Rue de la Paix, Paris",
+    "commentaire_de_Gordon": "Le café était tellement amer que même mâcher une veille gomme séché sous un bureau aurait-été meilleur !",
+    "note_de_Gordon": 3,
+    "note_public": 5,
+    "nombre_insultes": 82,
+    "date_de_visite": {
+        "$date": "2022-03-14T00:00:00Z"
+    },
+    "emission_censurer": true,
+    "cuisinier": [
+        "Sophie Leclerc",
+        "Jean-Pierre Martin"
+    ],
+    "commentaire_public": [
+        {
+            "commentaire": "Le café était vraiment mauvais, il était froid !",
+            "note": 1
+        },
+        {
+            "commentaire": "La serveuse à mit de la mayonnaise à la place de lait dans mon café, mais j'ai aimé ça !",
+            "note": 3
+        }
+    ]
+}
+
+{
+    "_id": {"$oid": "633b1ba17bc10fbb3a250f19"},
+    "nom": "La Pizzeria de Marco",
+    "description": "Venez chez Marco pour déguster ses pizzas artisanales",
+    "emplacement": "10 Via Napoli, Naples",
+    "commentaire_de_Gordon": "Les pizzas étaient si lourdes que même un éléphant aurait du mal à les digérer !",
+    "note_de_Gordon": 2,
+    "note_public": 4,
+    "nombre_insultes": 69,
+    "date_de_visite": {
+        "$date": "2019-12-08T00:00:00Z"
+    },
+    "emission_censurer": true,
+    "cuisinier": [
+        "Marco Rossi",
+        "Antonia Bianchi"
+    ],
+    "commentaire_public": [
+        {
+            "commentaire": "Les pizzas étaient trop épaisses",
+            "note": 2
+        },
+        {
+            "commentaire": "Ils étaient si lourdes que j'ai tombé dans les marches et j'ia du aller à l'hôpital",
+            "note": 2
+        }
+    ]
+}
+
+{
+    "_id": {"$oid": "633b1ba17bc10fbb3a250f1a"},
+    "nom": "Le Sushi Bar d'Akiko",
+    "description": "Venez chez Akiko pour déguster des sushis frais",
+    "emplacement": "24 Sakura Street, Tokyo",
+    "commentaire_de_Gordon": "Les sushis étaient si mal préparés que même un poisson mort aurait meilleur goût !",
+    "note_de_Gordon": 1,
+    "note_public": 4,
+    "nombre_insultes": 79,
+    "date_de_visite": {
+        "$date": "2021-05-22T00:00:00Z"
+    },
+    "emission_censurer": true,
+    "cuisinier": [
+        "Akiko Tanaka",
+        "Takashi Suzuki"
+    ],
+    "commentaire_public": [
+        {
+            "commentaire": "Les sushis viennent de cannes de sardine, j'ai adorée !",
+            "note": 4
+        },
+        {
+            "commentaire": "Les cocktails qu'ils offrnet sont 95% eau et 5% alchool",
+            "note": 2
+        }
+    ]
+}
+
+{
+    "_id": {"$oid": "633b1ba17bc10fbb3a250f1b"},
+    "nom": "La Brasserie de Pierre",
+    "description": "Venez chez Pierre pour déguster des plats traditionnels français",
+    "emplacement": "15 Rue de la Révolution, Paris",
+    "commentaire_de_Gordon": "La cuisine était si fade que même un dictionnaire aurait plus de saveur !",
+    "note_de_Gordon": 2,
+    "note_public": 3,
+    "nombre_insultes": 67,
+    "date_de_visite": {
+        "$date": "2020-08-17T00:00:00Z"
+    },
+    "emission_censurer": true,
+    "cuisinier": [
+        "Pierre Dubois",
+        "Marie Laurent"
+    ],
+    "commentaire_public": [
+        {
+            "commentaire": "Les baguettes étaient dur comme la pierre !",
+            "note": 1
+        },
+        {
+            "commentaire": "Bonne place si vous voulez dépenser tout vos économie !",
+            "note": 2
+        }
+    ]
+}
+
+{
+    "_id": {"$oid": "633b1ba17bc10fbb3a250f1c"},
+    "nom": "Cantine du cégep de Victoriaville",
+    "description": "Venez chez nous pour une expérience gastronomique que vous n'oublierez jamais!",
+    "emplacement": "Cégep de Victoriaville",
+    "commentaire_de_Gordon": "C'était tellement épouvantable que même les démons de l'Enfer ont déserté ce lieu maudit !",
+    "note_de_Gordon": 3,
+    "note_public": 2,
+    "nombre_insultes": 100,
+    "date_de_visite": {
+        "$date": "2023-09-25T00:00:00Z"
+    },
+    "emission_censurer": true,
+    "cuisinier": [
+        "Lucifer Mephisto",
+        "Beelzebub Satan"
+    ],
+    "commentaire_public": [
+        {
+            "commentaire": "C'était l'expérience la plus horrible de ma vie, je suis hanté par cette visite !",
+            "note": 1
+        },
+        {
+            "commentaire": "Les plats étaient si diaboliques que même le Diable lui-même les aurait rejetés !",
+            "note": 1
+        },
+        {
+            "commentaire": "Des cafard sont présent dans la soupe",
+            "note": 1
+        }
+    ]
+}
