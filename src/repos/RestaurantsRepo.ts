@@ -1,6 +1,8 @@
 //Code inspiré de: https://web3.kerzo.ca/projet_complet_mongoose/
 
 import Restaurants, { IRestaurants } from '@src/models/Restaurants';
+import mongoose, { Schema } from 'mongoose';
+import { json } from 'stream/consumers';
 
 // **** Functions **** //
 async function persists(id:string):Promise<boolean>
@@ -29,14 +31,18 @@ async function getAll(): Promise<IRestaurants[]> {
 async function getById(id: string): Promise<IRestaurants | null> {
 
   const restaurant = await Restaurants.findById(id)
-  Restaurants.schema.virtual("DescriptionPourEmission")
   
   if(restaurant == null)
   {
     throw new Error('Restaurant non trouvé')
   }
 
-  return restaurant
+  //Appelle de mes deux fonctions virtuals
+  const restaurantVirtual = restaurant.toObject();
+  restaurantVirtual.DescriptionPourEmission = restaurant.DescriptionPourEmission;
+  restaurantVirtual.ResumeEmission = restaurant.ResumeEmission;
+
+  return restaurantVirtual
 }
 
 /**

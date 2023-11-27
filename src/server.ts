@@ -19,6 +19,8 @@ import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 
 import { NodeEnvs } from '@src/constants/misc';
 import { RouteError } from '@src/other/classes';
+import { firebaseAuthentication } from './authentificationFireBase';
+import CORS from 'cors';
 
 
 // **** Variables **** //
@@ -30,6 +32,11 @@ const app = express();
 
 // Basic middleware
 app.use(express.json());
+
+app.use(CORS());
+//app.use(firebaseAuthentication);
+
+
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser(EnvVars.CookieProps.Secret));
 
@@ -77,15 +84,12 @@ app.use(express.static(staticDir));
 
 // Nav to users pg by default
 app.get('/', (_: Request, res: Response) => {
-  return res.redirect('/users');
+  return res.redirect('/home');
 });
 
 // Redirect to login if not logged in.
 app.get('/users', (_: Request, res: Response) => {
-  return res.sendFile('users.html', { root: viewsDir });
+  return res.sendFile('home.html', { root: viewsDir });
 });
-
-
-// **** Export default **** //
 
 export default app;

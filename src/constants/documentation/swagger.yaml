@@ -1,0 +1,483 @@
+openapi: 3.0.0
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: http://localhost:3000/KitchenNightmares/
+info:
+  version: "1.0.0"
+  title: Kitchen Nightmares
+  description: L'api servant à gérer la base de données des restaurants  de la série Kitchen Nightmares !
+paths:
+  /tout:
+    get:
+      tags:
+        - Get
+      summary: Liste tout les restaurants
+      responses:
+        '200':
+          description: "Permet de lister toutes les restaurants"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restaurant'
+
+  /{id}:
+    get:
+      tags:
+        - Get
+      summary: Liste un restaurant par son ID
+      parameters:
+        - name: id
+          in: path
+          description: ID du restaurant à récupérer
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Permet de récupérer un restaurant par son ID"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestaurantObjet'
+
+  /censure/{censure}:
+    get:
+      tags:
+        - Get
+      summary: Récupère les restaurants en fonction de la censure
+      parameters:
+        - name: censure
+          in: path
+          description: "Booléen indiquant si les restaurants sont censurées (true) ou non (false)"
+          required: true
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: "Permet de récupérer les restaurants en fonction de la censure"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restaurant'
+
+  /noteGordon/{note}:
+    get:
+      tags:
+        - Get
+      summary: Récupère les restaurants en fonction de la note de Gordon
+      parameters:
+        - name: note
+          in: path
+          description: "Note de Gordon pour filtrer les restaurants"
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: "Permet de récupérer les restaurants en fonction de la note de Gordon"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restaurant'
+
+  /insulteTotal:
+    get:
+      tags:
+        - Get
+      summary: Récupère le nombre total d'insultes
+      responses:
+        '200':
+          description: "Permet de récupérer le nombre total d'insultes"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  insulte_total:
+                    type: integer
+                example:
+                  nombreInsultes: 2084
+
+  /moyenneGordon:
+    get:
+      tags:
+        - Get
+      summary: Récupère la moyenne des notes de Gordon
+      responses:
+        '200':
+          description: "Permet de récupérer la moyenne des notes de Gordon"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  moyenne_gordon:
+                    type: number
+                example:
+                  moyenneGordon: 5.96
+
+  /add:
+    post:
+      tags:
+        - Post
+      summary: Ajoute une nouvelle émission
+      requestBody:
+        description: Les informations de la nouvelle émission à ajouter
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestaurantAjout'
+      responses:
+        '201':
+          description: "Permet d'ajouter un nouveau restaurant"
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/RestaurantAjoutAvecId'
+              
+              
+              
+
+
+  /update:
+    put:
+      tags:
+        - Put
+      summary: Modifie un restaurant existante
+      requestBody:
+        description: Les nouvelles informations du restaurant à mettre à jour
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestaurantModifier'
+      responses:
+        '200':
+          description: "Permet de mettre à jour un restaurant existant"
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/RestaurantModifier'
+
+  /delete/{id}:
+    delete:
+      tags:
+        - Delete
+      summary: Supprime un restaurant par son ID
+      parameters:
+        - name: id
+          in: path
+          description: ID du restaurant à supprimer
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Permet de supprimer un restaurant par son ID"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: "Restaurant supprimée avec succès"
+
+components:
+  schemas:
+    Restaurant:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: "633b1ba17bc10fbb3a250f13"
+        nom:
+          type: string
+          example: "Le resto de Bobby"
+        description:
+          type: string
+          example: "Venez manger chez Bobby"
+        emplacement:
+          type: string
+          example: "89 rue Saint-Pierre"
+        commentaire_de_Gordon:
+          type: string
+          example: "Horrible !"
+        note_de_Gordon:
+          type: integer
+          example: 1
+        note_public:
+          type: integer
+          example: 2
+        nombre_insultes:
+          type: integer
+          example: 88
+        date_de_visite:
+          type: string
+          example: "2015-12-26T00:00:00.000Z"
+        emission_censure:
+          type: boolean
+          example: false
+        cuisinier:
+          type: array
+          items:
+            type: string
+            example:
+              - "Jean-Claude Vantale"
+              - "Yve-Charge Plus"
+              - "King-Jang Hung"
+        commentaire_public:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+                example: "655bd361d4c549819124a93c"
+              commentaire:
+                type: string
+                example: "J'mai étoufai vec patat"
+              note:
+                type: integer
+                example: 0
+                
+    RestaurantAjout:
+      type: object
+      properties:
+        nom:
+          type: string
+          example: "Le resto de Bobby"
+        description:
+          type: string
+          example: "Venez manger chez Bobby"
+        emplacement:
+          type: string
+          example: "89 rue Saint-Pierre"
+        commentaire_de_Gordon:
+          type: string
+          example: "Horrible !"
+        note_de_Gordon:
+          type: integer
+          example: 1
+        note_public:
+          type: integer
+          example: 2
+        nombre_insultes:
+          type: integer
+          example: 88
+        date_de_visite:
+          type: string
+          example: "2015-12-26T00:00:00.000Z"
+        emission_censure:
+          type: boolean
+          example: false
+        cuisinier:
+          type: array
+          items:
+            type: string
+            example:
+              - "Jean-Claude Vantale"
+              - "Yve-Charge Plus"
+              - "King-Jang Hung"
+        commentaire_public:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+                example: "655bd361d4c549819124a93c"
+              commentaire:
+                type: string
+                example: "J'mai étoufai vec patat"
+              note:
+                type: integer
+                example: 0
+                
+                
+                
+    RestaurantAjoutAvecId:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: "633b1ba17bc10fbb3a250f13"
+        nom:
+          type: string
+          example: "Le resto de Bobby"
+        description:
+          type: string
+          example: "Venez manger chez Bobby"
+        emplacement:
+          type: string
+          example: "89 rue Saint-Pierre"
+        commentaire_de_Gordon:
+          type: string
+          example: "Horrible !"
+        note_de_Gordon:
+          type: integer
+          example: 1
+        note_public:
+          type: integer
+          example: 2
+        nombre_insultes:
+          type: integer
+          example: 88
+        date_de_visite:
+          type: string
+          example: "2015-12-26T00:00:00.000Z"
+        emission_censure:
+          type: boolean
+          example: false
+        cuisinier:
+          type: array
+          items:
+            type: string
+            example:
+              - "Jean-Claude Vantale"
+              - "Yve-Charge Plus"
+              - "King-Jang Hung"
+        commentaire_public:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+                example: "655bd361d4c549819124a93c"
+              commentaire:
+                type: string
+                example: "J'mai étoufai vec patat"
+              note:
+                type: integer
+                example: 0
+                
+                
+    RestaurantObjet:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: "633b1ba17bc10fbb3a250f13"
+        nom:
+          type: string
+          example: "Le resto de Bobby"
+        description:
+          type: string
+          example: "Venez manger chez Bobby"
+        emplacement:
+          type: string
+          example: "89 rue Saint-Pierre"
+        commentaire_de_Gordon:
+          type: string
+          example: "Horrible !"
+        note_de_Gordon:
+          type: integer
+          example: 1
+        note_public:
+          type: integer
+          example: 2
+        nombre_insultes:
+          type: integer
+          example: 88
+        date_de_visite:
+          type: string
+          example: "2015-12-26T00:00:00.000Z"
+        emission_censure:
+          type: boolean
+          example: false
+        cuisinier:
+          type: array
+          items:
+            type: string
+            example:
+              - "Jean-Claude Vantale"
+              - "Yve-Charge Plus"
+              - "King-Jang Hung"
+        commentaire_public:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+                example: "655bd361d4c549819124a93c"
+              commentaire:
+                type: string
+                example: "J'mai étoufai vec patat"
+              note:
+                type: integer
+                example: 0
+                
+                
+                
+    RestaurantModifier:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: "633b1ba17bc10fbb3a250f13"
+        nom:
+          type: string
+          example: "Le resto de Bobby et de son fils"
+        description:
+          type: string
+          example: "Venez manger chez Bobby"
+        emplacement:
+          type: string
+          example: "89 rue Saint-Pierre"
+        commentaire_de_Gordon:
+          type: string
+          example: "Horrible !"
+        note_de_Gordon:
+          type: integer
+          example: 1
+        note_public:
+          type: integer
+          example: 2
+        nombre_insultes:
+          type: integer
+          example: 88
+        date_de_visite:
+          type: string
+          example: "2015-12-26T00:00:00.000Z"
+        emission_censure:
+          type: boolean
+          example: false
+        cuisinier:
+          type: array
+          items:
+            type: string
+            example:
+              - "Jean-Claude Vantale"
+              - "Yve-Charge Plus"
+              - "King-Jang Hung"
+        commentaire_public:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+                example: "655bd361d4c549819124a93c"
+              commentaire:
+                type: string
+                example: "J'mai étoufai vec patat"
+              note:
+                type: integer
+                example: 0
+                
+                
+                
+                
+
+
+

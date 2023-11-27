@@ -2,7 +2,7 @@
 
 import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 import RestaurantService from '@src/services/RestaurantsService';
-import Restaurants, { IRestaurants } from '@src/models/Restaurants';
+import { IRestaurants } from '@src/models/Restaurants';
 import { IReq, IRes } from './types/express/misc';
 
 // **** Functions **** //

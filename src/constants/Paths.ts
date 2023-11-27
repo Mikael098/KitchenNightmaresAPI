@@ -7,7 +7,8 @@ export default {
   Base: '/',
   Restaurants: {
     Base: '/KitchenNightmares',
-    GetAll: '/',
+    Documentation: '/',
+    GetAll: '/tout',
     GetById: '/id/:id',
     GetByCensure: '/censure/:censure',
     GetByGordonNote: '/noteGordon/:noteGordon',

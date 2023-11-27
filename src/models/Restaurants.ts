@@ -43,6 +43,8 @@ const RestaurantsSchema = new Schema<IRestaurants>({
     maxlength:[100,"Le nom doit être inférieur à 100 caractères !"]},
 
   description: {type: String,
+    required:[true, "La description est obligatoire !"],
+    maxlength:[250,"La description doit être inférieur à 250 caractères !"],
   //Validation ci-dessous inspiré de:
   //https://mongoosejs.com/docs/validation.html#custom-validators
   validate: {
@@ -54,7 +56,7 @@ const RestaurantsSchema = new Schema<IRestaurants>({
 
   emplacement: {type: String,
     required:[true, "L'emplacement du restaurant est obligatoire !"],
-    minlength:[2,"L'emplacement du restaurant doit être d'aux moins 10 caractères !"],
+    minlength:[10,"L'emplacement du restaurant doit être d'aux moins 10 caractères !"],
     maxlength:[200,"L'emplacement du restaurant être inférieur à 200 caractères !"]},
 
   commentaire_de_Gordon: {type: String,
@@ -77,21 +79,15 @@ const RestaurantsSchema = new Schema<IRestaurants>({
     max:[10,"La note du public ne peut pas dépasser 10 !"]},
 
   nombre_insultes :{type:Number,
+    required:[true, "Le nombre d'insultes est obligatoire!"],
     min:[0, "Le nombre d'insulte que Gordon à dit, ne peut pas être inférieur à 0 !"]},
 
   date_de_visite: {type: Date,
-    required:[true,"La date de visite est obligatoire !"],
-    max:['2023-12-31',"La date de visite ne peut pas dépasser le 2023/12/31 !"],
     min:['1966-11-8', "La date de visite ne peut pas être inférieur à 1966/11/08 !"]},
 
   emission_censurer: {type:Boolean},
 
-    //Validation ci-dessous inspiré de:
-    //https://mongoosejs.com/docs/validation.html#custom-validators
-    //Regex de: https://chat.openai.com/
-  cuisinier: { type: [String],
-    validate:[notEmpty,"Il doit minimalement y avoir un cuisinier !"]
-    },
+  cuisinier: { type: [String]},
 
   commentaire_public: {
     type:[
@@ -117,22 +113,23 @@ const RestaurantsSchema = new Schema<IRestaurants>({
 RestaurantsSchema.virtual('ResumeEmission').
 get(function() {
   return "Gordon Ramsay a dit " + this.nombre_insultes +
-  " insultes. Son commentaire est " + this.commentaire_de_Gordon + 
-  " et sa note est " + this.note_de_Gordon
+  " insultes. Son commentaire est <" + this.commentaire_de_Gordon + 
+  ">. Sa note est " + this.note_de_Gordon
 })
 
 //Permet de retourner la description de l'émission
 RestaurantsSchema.virtual('DescriptionPourEmission').
 get(function() {
-  let censurer
+  let censurer = ""
 
   if(this.emission_censurer!=false)
   {
     censurer = "Cette émission contient un language vulgaire, la discrétion des téléspectateurs est avertie !"
   }
 
+
   return "Dans l'émission d'aujourd'hui, Gordon Ramsey visite " + 
-    this.nom + " situé à " + this.emplacement + " . \n " + censurer
+    this.nom + " situé à " + this.emplacement + ". " + censurer
 })
 
 mongoose.pluralize(null);
