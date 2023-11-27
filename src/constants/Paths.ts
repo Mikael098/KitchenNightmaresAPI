@@ -4,7 +4,7 @@
  * Les chemins d'accès à mes routes
  */
 export default {
-  Base: '/',
+  Base: '/api',
   Restaurants: {
     Base: '/KitchenNightmares',
     Documentation: '/',
