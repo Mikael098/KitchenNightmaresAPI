@@ -4,12 +4,9 @@ import { Router, NextFunction, Request, Response } from 'express';
 import jetValidator from 'jet-validator';
 import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 import fs from 'fs';
-
 import Paths from '../constants/Paths';
 import Restaurant from '@src/models/Restaurants';
 import RestaurantRoutes from './RestaurantsRoutes';
-
-
 
 
 // **** Variables **** //
@@ -31,7 +28,6 @@ function validateRestaurant(req:Request, res:Response, next:NextFunction)
     }
 
 }
-
 
 // Sort tous les restaurants
 apiRouter.get(
