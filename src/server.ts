@@ -32,6 +32,7 @@ import http  from 'http';
 
 const app = express();
 connect(EnvVars.MONGODB_URI!)
+console.log(EnvVars.MONGODB_URI);
 
 
 // **** Setup **** //
