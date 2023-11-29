@@ -12,7 +12,7 @@ import serverless from 'serverless-http';
 
 // *** Variables d'environnement ***
 
-//dotenv.config();
+dotenv.config();
 
 // *** Le handler requis par Netlify **
 export const handler = serverless(app);
