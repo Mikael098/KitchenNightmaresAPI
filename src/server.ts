@@ -22,6 +22,11 @@ import { RouteError } from '@src/other/classes';
 import { firebaseAuthentication } from './authentificationFireBase';
 import CORS from 'cors';
 
+import './pre-start'; // Must be the first import
+import { connect } from 'mongoose';
+import server from './server';
+import http  from 'http';
+
 
 // **** Variables **** //
 
@@ -105,5 +110,14 @@ app.get('/', (_: Request, res: Response) => {
 app.get('/users', (_: Request, res: Response) => {
   return res.sendFile('home.html', { root: viewsDir });
 });
+
+// **** Run **** //
+const SERVER_START_MSG =
+  'Express server started on port: ' + EnvVars.Port.toString();
+
+connect(EnvVars.MONGODB_URI!)
+  .then(() =>server.listen(EnvVars.Port, () => logger.info(SERVER_START_MSG)))
+  .catch((err) => logger.err(err,true)
+);
 
 export default app;
