@@ -91,7 +91,6 @@ app.use((
 });
 
 
-// ** Front-End Content ** //
 
 // Set views directory (html)
 const viewsDir = path.join(__dirname, 'views');
