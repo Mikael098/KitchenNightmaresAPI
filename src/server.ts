@@ -31,6 +31,7 @@ import http  from 'http';
 // **** Variables **** //
 
 const app = express();
+connect(EnvVars.MONGODB_URI!)
 
 
 // **** Setup **** //
@@ -109,24 +110,5 @@ app.get('/', (_: Request, res: Response) => {
 app.get('/login', (_: Request, res: Response) => {
   return res.sendFile('home.html', { root: viewsDir });
 });
-
-// **** Run **** //
-const SERVER_START_MSG =
-  'Express server started on port: ' + EnvVars.Port.toString();
-
-  connect(EnvVars.MONGODB_URI!)
-  .then(() => {
-    server.listen(EnvVars.Port, () => {
-      console.log('Serveur écoute sur le port ' + EnvVars.Port);
-      logger.info(SERVER_START_MSG);
-    });
-    console.log('Connecté MongoDB');
-  })
-  .catch((err) => {
-    console.log('Erreur connection MongoDB:', err);
-    logger.err(err, true);
-  });
-
-
 
 export default app;
