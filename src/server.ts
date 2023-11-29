@@ -21,7 +21,6 @@ import { NodeEnvs } from '@src/constants/misc';
 import { RouteError } from '@src/other/classes';
 import { firebaseAuthentication } from './authentificationFireBase';
 import CORS from 'cors';
-
 import './pre-start'; // Must be the first import
 import { connect } from 'mongoose';
 import server from './server';
