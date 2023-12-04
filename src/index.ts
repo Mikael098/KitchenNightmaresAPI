@@ -1,7 +1,6 @@
 import './pre-start'; // Must be the first import
 import logger from 'jet-logger';
 import { connect } from 'mongoose';
-//import EnvVars from './constants/EnvVars';
 import server from './server';
 import http  from 'http';
 

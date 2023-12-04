@@ -14,7 +14,6 @@ import 'express-async-errors';
 import BaseRouter from '@src/routes/api';
 import Paths from '@src/constants/Paths';
 
-//import EnvVars from '@src/constants/EnvVars';
 import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 
 import { NodeEnvs } from '@src/constants/misc';
@@ -57,17 +56,16 @@ app.use(CORS());
 
 
 app.use(express.urlencoded({extended: true}));
-//app.use(cookieParser(EnvVars.CookieProps.Secret));
 
 // Show routes called in console during development
-//if (EnvVars.NodeEnv === NodeEnvs.Dev.valueOf()) {
+if (process.env.NODE_ENV === NodeEnvs.Dev.valueOf()) {
   app.use(morgan('dev'));
-//}
+}
 
 // Security
-/*if (EnvVars.NodeEnv === NodeEnvs.Production.valueOf()) {
+if (process.env.NODE_ENV === NodeEnvs.Production.valueOf()) {
   app.use(helmet());
-}*/
+}
 
 // Add APIs, must be after middleware
 app.use(Paths.Base, BaseRouter);
@@ -80,9 +78,9 @@ app.use((
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   next: NextFunction,
 ) => {
-  //if (EnvVars.NodeEnv !== NodeEnvs.Test.valueOf()) {
+  if (process.env.NODE_ENV !== NodeEnvs.Test.valueOf()) {
     logger.err(err, true);
-  //}
+  }
   
   let status = HttpStatusCodes.BAD_REQUEST;
   if (err instanceof RouteError) {
