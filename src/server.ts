@@ -36,7 +36,7 @@ console.log(process.env.MONGODB_URI);
 // **** Setup **** //
 
 // rend disponible la documentation de l'interface logicielle
-app.get('/api-docs/', async (req, res) => {
+app.get('/api/KitchenNightmares/', async (req, res) => {
   res.set('Content-Security-Policy', 'script-src blob:');
   res.set('Content-Security-Policy', 'worker-src blob:');
   res.sendFile(path.join(__dirname, 'index.html'));
