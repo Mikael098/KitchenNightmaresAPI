@@ -7,7 +7,7 @@
 
 export default {
   NodeEnv: (process.env.NODE_ENV ?? ''),
-  MONGODB_URI: process.env.MONGODB_URI ?? 'mongodb://127.0.0.1:27017/KitchenNightmares',
+  MONGODB_URI: process.env.MONGODB_URI ?? 'mongodb+srv://mikael:2VmlFizR6PNw52Bl@cluster0.yrhjosd.mongodb.net/KitchenNightmares?retryWrites=true&w=majority',
   Port: (process.env.PORT ?? 0),
   CookieProps: {
     Key: 'ExpressGeneratorTs',
