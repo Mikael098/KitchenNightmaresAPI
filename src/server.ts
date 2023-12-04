@@ -44,7 +44,7 @@ app.get('/api-docs/', async (req, res) => {
 
 // redirige vers api-docs
 app.get('/', (req, res) => {
-  res.redirect('/api-docs');
+  res.redirect('/api/KitchenNightmares/');
 });
 
 
