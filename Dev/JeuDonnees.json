@@ -2,7 +2,7 @@
 {
     "_id":{"$oid":"633b1ba17bc10fbb3a250f13"},
     "nom":"Le resto de Bobby",
-    "description":"Venez chex Bobby,manger des bonnes patates aux poivres",
+    "description":"Venez chex Bobby,manger des bonnes patates aux poivres.",
     "emplacement":"89 rue Saint-Pierre, Boston",
     "commentaire_de_Gordon":"Je ne donnerai même pas les patates à des rats, tellement ils sont horrible !",
     "note_de_Gordon":1,
@@ -32,7 +32,7 @@
 {
     "_id":{"$oid":"633b1ba17bc10fbb3a250f14"},
     "nom":"La cuisine de Marie",
-    "description":"Venez chez Marie pour déguster ses délicieuses pâtes à la sauce tomate",
+    "description":"Venez chez Marie pour déguster ses délicieuses pâtes à la sauce tomate.",
     "emplacement":"55 avenue de la République, Paris",
     "commentaire_de_Gordon":"Les pâtes étaient tellement insipides que je les ai utilisées comme colles pour réparer ma chaise bancale !",
     "note_de_Gordon":2,
@@ -62,7 +62,7 @@
 {
     "_id":{"$oid":"633b1ba17bc10fbb3a250f15"},
     "nom":"Le Grill de Tony",
-    "description":"Venez chez Tony pour savourer ses succulentes côtes de porc grillées",
+    "description":"Venez chez Tony pour savourer ses succulentes côtes de porc grillées.",
     "emplacement":"123 Main Street, New York",
     "commentaire_de_Gordon":"Les côtes de porc étaient si dures que même un marteau-piqueur aurait du mal à les couper !",
     "note_de_Gordon":1,
@@ -92,7 +92,7 @@
 {
     "_id":{"$oid":"633b1ba17bc10fbb3a250f16"},
     "nom":"Le Bistrot d'Isabelle",
-    "description":"Venez chez Isabelle pour déguster sa fameuse soupe à l'oignon",
+    "description":"Venez chez Isabelle pour déguster sa fameuse soupe à l'oignon.",
     "emplacement":"42 Rue de la Paix, Lyon",
     "commentaire_de_Gordon":"La soupe à l'oignon était si fade que même un pichet d'eau aurait plus de saveur !",
     "note_de_Gordon":1,
@@ -122,7 +122,7 @@
 {
     "_id": {"$oid": "633b1ba17bc10fbb3a250f17"},
     "nom": "Chez Luigi",
-    "description": "Venez chez Luigi pour déguster ses pizzas authentiques",
+    "description": "Venez chez Luigi pour déguster ses pizzas authentiques.",
     "emplacement": "17 Via Roma, Rome",
     "commentaire_de_Gordon": "Ces pizzas étaient si insipides que même un carton aurait plus de goût !",
     "note_de_Gordon": 1,
@@ -152,7 +152,7 @@
 {
     "_id": {"$oid": "633b1ba17bc10fbb3a250f18"},
     "nom": "Le Café de Sophie",
-    "description": "Venez chez Sophie pour déguster son café et ses pâtisseries faites maison",
+    "description": "Venez chez Sophie pour déguster son café et ses pâtisseries faites maison.",
     "emplacement": "30 Rue de la Paix, Paris",
     "commentaire_de_Gordon": "Le café était tellement amer que même mâcher une veille gomme séché sous un bureau aurait-été meilleur !",
     "note_de_Gordon": 3,
@@ -181,7 +181,7 @@
 {
     "_id": {"$oid": "633b1ba17bc10fbb3a250f19"},
     "nom": "La Pizzeria de Marco",
-    "description": "Venez chez Marco pour déguster ses pizzas artisanales",
+    "description": "Venez chez Marco pour déguster ses pizzas artisanales.",
     "emplacement": "10 Via Napoli, Naples",
     "commentaire_de_Gordon": "Les pizzas étaient si lourdes que même un éléphant aurait du mal à les digérer !",
     "note_de_Gordon": 2,
@@ -210,7 +210,7 @@
 {
     "_id": {"$oid": "633b1ba17bc10fbb3a250f1a"},
     "nom": "Le Sushi Bar d'Akiko",
-    "description": "Venez chez Akiko pour déguster des sushis frais",
+    "description": "Venez chez Akiko pour déguster des sushis frais.",
     "emplacement": "24 Sakura Street, Tokyo",
     "commentaire_de_Gordon": "Les sushis étaient si mal préparés que même un poisson mort aurait meilleur goût !",
     "note_de_Gordon": 1,
@@ -239,7 +239,7 @@
 {
     "_id": {"$oid": "633b1ba17bc10fbb3a250f1b"},
     "nom": "La Brasserie de Pierre",
-    "description": "Venez chez Pierre pour déguster des plats traditionnels français",
+    "description": "Venez chez Pierre pour déguster des plats traditionnels français.",
     "emplacement": "15 Rue de la Révolution, Paris",
     "commentaire_de_Gordon": "La cuisine était si fade que même un dictionnaire aurait plus de saveur !",
     "note_de_Gordon": 2,
@@ -268,7 +268,7 @@
 {
     "_id": {"$oid": "633b1ba17bc10fbb3a250f1c"},
     "nom": "Cantine du cégep de Victoriaville",
-    "description": "Venez chez nous pour une expérience gastronomique que vous n'oublierez jamais!",
+    "description": "Venez chez nous pour une expérience gastronomique que vous n'oublierez jamais.",
     "emplacement": "Cégep de Victoriaville",
     "commentaire_de_Gordon": "C'était tellement épouvantable que même les démons de l'Enfer ont déserté ce lieu maudit !",
     "note_de_Gordon": 3,
